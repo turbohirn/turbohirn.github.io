@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ site.title }} | {{ page.title }}</title>
+    <link rel="stylesheet" href="/assets/css/main.css">
+  </head>
+  <body class="h-100 bg-secondary">
+
+    {% include symbols.svg %}
+
+    <header> 
+        
+        <nav class="navbar navbar-expand-lg bg-light border-bottom">
+            <div class="container">
+                
+              <a class="navbar-brand" href="/">
+                
+                <svg class="d-inline-block align-text-middle" style="height:2em; width:2rem;">
+                    <use xlink:href="#s-logo-bot" style="fill:#444"></use>
+                </svg>
+                {{ site.title }}</a>
+              
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                {% assign plink = page.permalink %}
+                {% assign pages = site.pages | sort: 'sort' %}
+                {% for _doc in pages %}
+                    {% if _doc.layout == 'page' and _doc.nav == 1 %}
+                        {% if plink == _doc.permalink %}
+                        {% assign aclass = 'active'%}
+                        {% else %}
+                        {% assign aclass = ''%}
+                        {% endif %}
+                        <li class="nav-item"><a href="{{_doc.permalink}}"  class="nav-link {{ aclass }}">{{_doc.title}}</a></li>
+                    {% endif %}
+                {% endfor %}
+               
+                </ul>
+                </div>
+            </div>
+        </nav>
+
+        
+    </header>
+    <section class="bg-white">
+        <div class="container pt-3 pb-5">
+            
+            <div class="row">
+
+                {% if page.sort == 2 %}
+
+                <div class="col-3">
+                    <h1 class="display-4">{{ page.title }}</h1><br/>
+                    adasdsa
+
+                    {{ page.url | slugify }}
+                </div>
+                <div class="col-9">
+                    
+                    {{ content }}
+                </div>
+
+                {% else %}
+
+                <div class="col-9">
+                    <h1 class="display-4">{{ page.title }}</h1><br/>
+                    {{ content }}
+                </div>
+                <div class="col-3">
+                    <ul>
+                        {% for post in site.posts %}
+                          <li>
+                            <a href="{{ post.url }}">{{ post.title }}</a>
+                          </li>
+                        {% endfor %}
+                      </ul>
+                </div>
+                {% endif %}
+
+
+            </div>
+
+    
+        </div>
+
+    </section>
+
+    <footer class="bd-footer py-4 py-md-3 text-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-4">{{ site.email }}</div>
+
+                <div class="col-4">
+                    <a href="/feed.xml">Feed</a>
+                </div>
+                <div class="col-4"></div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+  </body>
+</html>
