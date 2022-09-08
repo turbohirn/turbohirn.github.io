@@ -39,10 +39,18 @@ $font-family-monospace : SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mo
 	font-weight:bold;
 }
 
-.display-1, .display-2, .display-3, .display-4 {
+.display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
   font-family: r159_ul, $_baseFontExtender;
 }
 
 p, body {  
   font-family: r159_r, $_baseFontExtender;
+}
+
+a:not(.nav-link) {
+  color: #0dcaf0;
+}
+
+.nav-link.active {
+  color: #0dcaf0;
 }

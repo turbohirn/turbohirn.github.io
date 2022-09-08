@@ -1,11 +1,32 @@
 <!doctype html>
 <html lang="en" class="h-100">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>{{ site.title }} | {{ page.title }}</title>
-    <link rel="stylesheet" href="/assets/css/main.css">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-title" content="turbohirn on Github"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, shrink-to-fit=no"/>
+    <meta name="description" content="Set gpio header by remote"/>
+    <meta name="msapplication-TileColor" content="#212529"/>
+    <meta name="msapplication-TileImage" content="/assets/favicon/mstile-150x150.png"/>
+    <meta name="application-name" content="turbohirn on Github"/>
+    <meta name="theme-color" content="#212529" media="(prefers-color-scheme: light)"/>
+    <meta name="theme-color" content="#212529" media="(prefers-color-scheme: dark)"/>
+    <link rel="apple-touch-startup-image" href="/assets/favicon/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png"/>
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" crossorigin="use-credentials"/>
+    <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#212529"/>
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon/favicon.ico"/>
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png"/>
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png"/>
+    <link rel="alternate icon" type="image/png" href="/assets/favicon/favicon-32x32.png"/>    
+    <link rel="stylesheet" href="/assets/css/main.css" />
   </head>
-  <body class="h-100 bg-secondary">
+  <body class="h-100 bg-dark">
 
     {% include symbols.svg %}
 
@@ -14,7 +35,7 @@
         <nav class="navbar navbar-expand-lg bg-light border-bottom">
             <div class="container">
                 
-              <a class="navbar-brand" href="/">
+              <a class="navbar-brand nav-link" href="/">
                 
                 <svg class="d-inline-block align-text-middle" style="height:2em; width:2rem;">
                     <use xlink:href="#s-logo-bot" style="fill:#444"></use>
@@ -29,7 +50,7 @@
                 {% assign plink = page.permalink %}
                 {% assign pages = site.pages | sort: 'sort' %}
                 {% for _doc in pages %}
-                    {% if _doc.layout == 'page' and _doc.nav == 1 %}
+                    {% if _doc.layout == 'page' and _doc.level == 1 %}
                         {% if plink == _doc.permalink %}
                         {% assign aclass = 'active'%}
                         {% else %}
@@ -51,37 +72,70 @@
             
             <div class="row">
 
-                {% if page.sort == 2 %}
-
-                <div class="col-3">
-                    <h1 class="display-4">{{ page.title }}</h1><br/>
-                    adasdsa
-
-                    {{ page.url | slugify }}
-                </div>
+                
+                {% if page.level < 2 %}
                 <div class="col-9">
-                    
-                    {{ content }}
-                </div>
+                  <h1 class="display-6">{{ page.title }}</h1><hr/>
+                  {{ content }}
+                  {% if page.sub %}
+                  <div class="row row-cols-1 row-cols-md-3 g-4">
+                  {% for _doc in pages %}
+                  {% if _doc.layout == 'page' and _doc.level == 2 %}
 
+                  <div class="col">
+                    <div class="card text-bg-light text-center" style="width: 18rem;">
+                      <div class="card-body">
+                        <h6 class="card-title">{{_doc.title}}</h6>
+                        <p class="card-text">
+                          <a href="{{_doc.permalink}}" class="stretched-link"></a>{{_doc.desc}}</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {% endif %}
+                  {% endfor %}
+                  </div>
+                  {% endif %}
+                                
+                </div>
+                <div class="col-3">
+                  <ul>
+                    {% for post in site.posts %}
+                      <li>
+                        <a href="{{ post.url }}">{{ post.title }}</a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                </div>
                 {% else %}
 
-                <div class="col-9">
-                    <h1 class="display-4">{{ page.title }}</h1><br/>
-                    {{ content }}
+                <div class="col-12">
+                  <h1 class="display-6">{{ page.title }}</h1><hr/>
                 </div>
                 <div class="col-3">
-                    <ul>
-                        {% for post in site.posts %}
-                          <li>
-                            <a href="{{ post.url }}">{{ post.title }}</a>
-                          </li>
-                        {% endfor %}
-                      </ul>
+                  <ul class="list-group">
+                  {% for _doc in pages %}
+                  {% if _doc.layout == 'page' and _doc.level == 3 %}
+
+                  {% if page.title == _doc.title %}
+                  {% assign aclass = 'active'%}
+                  {% else %}
+                  {% assign aclass = ''%}
+                  {% endif %}
+
+                  <li class="list-group-item list-group-item-action">
+                    <a href="{{_doc.permalink}}" class="nav-link {{ aclass }}">{{_doc.title}}</a>
+                  </li>
+                  {% endif %}
+                  {% endfor %}
+                  </ul>
                 </div>
+                <div class="col-9">
+                {{ content }}
+                </div>
+
                 {% endif %}
-
-
             </div>
 
     
@@ -92,12 +146,17 @@
     <footer class="bd-footer py-4 py-md-3 text-light">
         <div class="container">
             <div class="row">
-                <div class="col-4">{{ site.email }}</div>
+                
 
-                <div class="col-4">
-                    <a href="/feed.xml">Feed</a>
+                <div class="col-3">
+                    <p>Mail: {{ site.email }}</p>
+                    <p>Haftung, Impressum auf <a href="https://turbohirn.de" target="_blank">turbohirn.de</a></p>
+                    <p>Link zum <a href="/feed.xml">Feed</a></p>
+
+
+
                 </div>
-                <div class="col-4"></div>
+                <div class="col-9"></div>
             </div>
         </div>
     </footer>

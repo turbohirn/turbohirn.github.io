@@ -1,11 +1,32 @@
 <!doctype html>
 <html lang="en" class="h-100">
   <head>
-    <meta charset="utf-8">
-    <title>Turbohirn docs | Pico</title>
-    <link rel="stylesheet" href="/assets/css/main.css">
+    <meta charset="utf-8" />
+    <title>Turbohirn docs | Ziele</title>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-title" content="turbohirn on Github"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, shrink-to-fit=no"/>
+    <meta name="description" content="Set gpio header by remote"/>
+    <meta name="msapplication-TileColor" content="#212529"/>
+    <meta name="msapplication-TileImage" content="/assets/favicon/mstile-150x150.png"/>
+    <meta name="application-name" content="turbohirn on Github"/>
+    <meta name="theme-color" content="#212529" media="(prefers-color-scheme: light)"/>
+    <meta name="theme-color" content="#212529" media="(prefers-color-scheme: dark)"/>
+    <link rel="apple-touch-startup-image" href="/assets/favicon/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png"/>
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" crossorigin="use-credentials"/>
+    <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#212529"/>
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon/favicon.ico"/>
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png"/>
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png"/>
+    <link rel="alternate icon" type="image/png" href="/assets/favicon/favicon-32x32.png"/>    
+    <link rel="stylesheet" href="/assets/css/main.css" />
   </head>
-  <body class="h-100 bg-secondary">
+  <body class="h-100 bg-dark">
 
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display:none;">
 	<symbol id="s-find" viewBox="0 0 100 100">
@@ -282,7 +303,7 @@
         <nav class="navbar navbar-expand-lg bg-light border-bottom">
             <div class="container">
                 
-              <a class="navbar-brand" href="/">
+              <a class="navbar-brand nav-link" href="/">
                 
                 <svg class="d-inline-block align-text-middle" style="height:2em; width:2rem;">
                     <use xlink:href="#s-logo-bot" style="fill:#444"></use>
@@ -310,8 +331,14 @@
                     
                 
                     
+                
+                    
                         
-                        <li class="nav-item"><a href="/projects/index.html"  class="nav-link ">Projects</a></li>
+                        <li class="nav-item"><a href="/docs/index.html"  class="nav-link ">Dokumentationen</a></li>
+                    
+                
+                    
+                
                     
                 
                     
@@ -333,29 +360,85 @@
             <div class="row">
 
                 
-
-                <div class="col-9">
-                    <h1 class="display-4">Pico</h1><br/>
-                    <h1 id="moin">Moin</h1>
-
-
-                </div>
-                <div class="col-3">
-                    <ul>
-                        
-                          <li>
-                            <a href="/jekyll/update/2022/08/27/my-new-post.html">Erster Blog!</a>
-                          </li>
-                        
-                          <li>
-                            <a href="/jekyll/update/2022/08/02/welcome-to-jekyll.html">Welcome to Jekyll!</a>
-                          </li>
-                        
-                      </ul>
-                </div>
                 
 
+                <div class="col-12">
+                  <h1 class="display-6">Ziele</h1><hr/>
+                </div>
+                <div class="col-3">
+                  <ul class="list-group">
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
 
+                  
+
+                  <li class="list-group-item list-group-item-action">
+                    <a href="/docs/pico/start.html" class="nav-link ">Einleitung</a>
+                  </li>
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+
+                  
+
+                  <li class="list-group-item list-group-item-action">
+                    <a href="/docs/pico/goals.html" class="nav-link active">Ziele</a>
+                  </li>
+                  
+                  
+                  
+
+                  
+
+                  <li class="list-group-item list-group-item-action">
+                    <a href="/docs/pico/install.html" class="nav-link ">Installation</a>
+                  </li>
+                  
+                  
+                  
+                  
+                  </ul>
+                </div>
+                <div class="col-9">
+                <p>Im Client soll es folgende Möglichkeiten geben:</p>
+<ol>
+  <li>GPIOs flexibel  in den Operations-Modus zu versetzen (Modus:  IN/OUT),</li>
+  <li>GPIOs externe Relais zu einfach ein- und auszuschalten (Modus: OUT),</li>
+  <li>GPIOs zeitgesteuert zu schalten (Modus: OUT),</li>
+  <li>GPIO-Eingangszustände auszuwerten und bei Ereignis GPIOs (wie in Punkt 2) zu schalten  (Modus: IN),</li>
+  <li>Schnittstellen für virtuelle GPIO-Extender und externe Mikrocontroller zur Verfügung zu stellen,</li>
+  <li>Steuerung weiterer Raspberry Pis via Remote-GPIO.</li>
+</ol>
+
+<p>Die Kernkonfiguration des GPIO-Headers befindet sich in einem Python-Dictionary. Die nutzerspezifischen GPIO-Einstellungen werden in einer separaten Stored-JSON-Datei abgelegt und zur Laufzeit mit dem Python-Dictonary angereichert. Diese JSON-Datei befindet sich nicht im GIT-Repository und wird nutzerabhängig erzeugt, wenn noch nicht vorhanden. Damit ist sichergestellt, dass Programmaktualisierungen diese Konfiguration nicht überschreiben oder beeinflussen. Ein Löschung von konfigurierten GPIOs ist nicht vorgesehen.
+Hinweis: Die gespeicherten GPIOs mit Status ‘Inactive’ werden in der Stored-JSON belassen, um zukünftige Konfigurationen der Nutzer-Metadaten nicht zu löschen und für eine spätere Verwendung vorzuhalten. Bei Änderungen des Datenmodells im Rahmen der Weiterentwicklung, sollte die Datei stored.json neu erzeugt werden.</p>
+
+<p>Die Steuerung von Pins (Modus OUT) wird von sogenannten Aktoren übernommen. Diese Aktoren steuern Pins entweder über Zeitsteuerungen oder über Eingabewerte. Bei Letzterem müssen Pins (Modus IN) mit einem entsprechenden Eingabe-Trigger konfiguriert sein. Diese Trigger sind aktuell:</p>
+<ol>
+  <li>An/Aus,</li>
+  <li>Temperatur,</li>
+  <li>Luftfeuchte.</li>
+</ol>
+
+<p>Die Verknüpfung der Aktoren mit den Pins (Modus OUT) erfolgt auf Basis einer 1:n-Verlinkung. Dabei können mehrere Pins von einem Aktor gesteuert werden. Ein einmal zugeordneter Pin (GPIO) kann nicht mit anderen Aktoren verwendet werden.</p>
+
+                </div>
+
+                
             </div>
 
     
@@ -366,12 +449,17 @@
     <footer class="bd-footer py-4 py-md-3 text-light">
         <div class="container">
             <div class="row">
-                <div class="col-4">hello@turbohirn.de</div>
+                
 
-                <div class="col-4">
-                    <a href="/feed.xml">Feed</a>
+                <div class="col-3">
+                    <p>Mail: hello@turbohirn.de</p>
+                    <p>Haftung, Impressum auf <a href="https://turbohirn.de" target="_blank">turbohirn.de</a></p>
+                    <p>Link zum <a href="/feed.xml">Feed</a></p>
+
+
+
                 </div>
-                <div class="col-4"></div>
+                <div class="col-9"></div>
             </div>
         </div>
     </footer>

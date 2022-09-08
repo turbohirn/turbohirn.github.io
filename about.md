@@ -2,7 +2,7 @@
 layout: page
 title: About
 permalink: /about/index.html
-nav: 1
+level: 1
 sort: 5
 ---
 
