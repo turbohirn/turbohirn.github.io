@@ -483,6 +483,32 @@ Für das Backend und werden folgende Umgebungen und Bibliotheken benötigt:
   </li>
 </ol>
 
+<h4 id="entwicklungsumgebung">Entwicklungsumgebung</h4>
+
+<p>Node.js Installation und Update<br />
+Zur Einrichtung auf einem macOS- oder Linux-Desktop<br />
+Installationsdatei: <a href="https://nodejs.org/en/download/">Nodes.js für Mac</a><br />
+Update von Node.js</p>
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">$ sudo npm cache clean -f</code></li>
+  <li><code class="language-plaintext highlighter-rouge">$ sudo npm install -g n</code></li>
+  <li><code class="language-plaintext highlighter-rouge">$ sudo n stable</code></li>
+  <li><code class="language-plaintext highlighter-rouge">$ # node -v</code></li>
+</ol>
+
+<p>Aktualisierung des NPM-Package managers</p>
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">$ sudo npm install -g npm@latest</code></li>
+</ol>
+
+<p>Python3-Befehle auf RPI</p>
+<ul>
+  <li>Kontrolle was läuft:<br />
+<code class="language-plaintext highlighter-rouge">$ ps aux | grep -i python</code></li>
+  <li>Python-Server-Prozess hart beenden:<br />
+<code class="language-plaintext highlighter-rouge">$ killall python oder $ pkill -f run.py</code></li>
+</ul>
+
                 </div>
 
                 
