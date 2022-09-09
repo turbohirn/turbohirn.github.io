@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
   <head>
     <meta charset="utf-8" />
-    <title>Turbohirn docs | Erster Blog!</title>
+    <title>Turbohirn docs | Versionierung und GIT</title>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="apple-mobile-web-app-title" content="turbohirn on Github"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
@@ -333,6 +333,8 @@
                     
                 
                     
+                
+                    
                         
                         <li class="nav-item"><a href="/docs/index.html"  class="nav-link ">Dokumentationen</a></li>
                     
@@ -365,30 +367,108 @@
 
                 
                 
-                <div class="col-9">
-                  <h1 class="display-6">Erster Blog!</h1><hr/>
-                  <h1 id="moin">Moin</h1>
 
-<p>adasdad</p>
-
-<p><code class="language-plaintext highlighter-rouge">YEAR-MONTH-DAY-title.MARKUP</code></p>
-
-                  
-                                
+                <div class="col-12">
+                  <h1 class="display-6">Versionierung und GIT</h1><hr/>
                 </div>
                 <div class="col-3">
-                  <ul>
-                    
-                      <li>
-                        <a href="/jekyll/update/2022/08/27/my-new-post.html">Erster Blog!</a>
-                      </li>
-                    
-                      <li>
-                        <a href="/jekyll/update/2022/08/02/welcome-to-jekyll.html">Welcome to Jekyll!</a>
-                      </li>
-                    
+                  <ul class="list-group">
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+
+                  
+
+                  <li class="list-group-item list-group-item-action">
+                    <a href="/docs/pico/start.html" class="nav-link ">Einleitung</a>
+                  </li>
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+
+                  
+
+                  <li class="list-group-item list-group-item-action">
+                    <a href="/docs/pico/goals.html" class="nav-link ">Ziele</a>
+                  </li>
+                  
+                  
+                  
+
+                  
+
+                  <li class="list-group-item list-group-item-action">
+                    <a href="/docs/pico/versions.html" class="nav-link active fw-bold ">Versionierung und GIT</a>
+                  </li>
+                  
+                  
+                  
+
+                  
+
+                  <li class="list-group-item list-group-item-action">
+                    <a href="/docs/pico/techenv.html" class="nav-link ">Technik und Umgebung</a>
+                  </li>
+                  
+                  
+                  
+                  
+                  
+
+                  
+
+                  <li class="list-group-item list-group-item-action">
+                    <a href="/docs/pico/install.html" class="nav-link ">Installation</a>
+                  </li>
+                  
+                  
                   </ul>
                 </div>
+                <div class="col-9">
+                <p>Die Struktur der Versionsnummern richtet sich nach folgendem Modell:</p>
+<ol>
+  <li><strong>MAJOR</strong><br />
+Die Major Nummer wird erhöht, wenn die Software zur vorherigen Version inkompatibel wird.</li>
+  <li><strong>MINOR</strong><br />
+Die Minor Nummer wird erhöht bei neuen Funktionen der aktuellen Version hinzugefügt werden.</li>
+  <li><strong>PATCH</strong><br />
+Die Patch Nummern sind nur Bugfixes, behobene Fehler. Das sind sowohl Softwarefehler als auch Security Updates.</li>
+  <li><strong>BUILD</strong><br />
+Diese Angabe repräsentiert den Merge in den Hauptzweig (main) und den davon abgeleiteten Checkout in den Verteilzweig (deploy).</li>
+</ol>
+
+<hr />
+
+<h4 id="git-repository">GIT-Repository</h4>
+<p>Dieses Projekt ist einem Repository bei GitHub abgelegt → https://github.com/turbohirn/pico.git. Die Entwicklungs- und Veröffentlichungszweige gliedern sich wie folgt:</p>
+
+<ol>
+  <li><em>main</em> - alle Ressourcen; Backup aller Quellen.<br />
+Klone-URL: <code class="language-plaintext highlighter-rouge">git clone -b main https://&lt;TOKEN&gt;@github.com/turbohirn/pico.git</code></li>
+  <li><em>deploy</em> - alle transpilierten Laufzeit-Assets für den Produktiv-Betrieb.<br />
+Klone-URL: <code class="language-plaintext highlighter-rouge">git clone -b deploy https://&lt;TOKEN&gt;@github.com/turbohirn/pico.git</code></li>
+  <li><em>develope</em> - Hier befinden sich alle Entwicklungs-Resourcen. Hinweis: Merge-Files für main und deploy müssen immer produktiv transpiliert vorliegen.<br />
+Klone-URL: <code class="language-plaintext highlighter-rouge">git clone -b develope https://&lt;TOKEN&gt;@github.com/turbohirn/pico.git</code></li>
+</ol>
+
+
+                </div>
+
                 
             </div>
 

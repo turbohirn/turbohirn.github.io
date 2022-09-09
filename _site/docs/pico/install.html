@@ -342,8 +342,12 @@
                     
                 
                     
+                
+                    
                         
                         <li class="nav-item"><a href="/about/index.html"  class="nav-link ">About</a></li>
+                    
+                
                     
                 
                
@@ -379,14 +383,14 @@
                   
                   
                   
+                  
+                  
 
                   
 
                   <li class="list-group-item list-group-item-action">
                     <a href="/docs/pico/start.html" class="nav-link ">Einleitung</a>
                   </li>
-                  
-                  
                   
                   
                   
@@ -405,16 +409,36 @@
                   
 
                   <li class="list-group-item list-group-item-action">
-                    <a href="/docs/pico/install.html" class="nav-link active">Installation</a>
+                    <a href="/docs/pico/versions.html" class="nav-link ">Versionierung und GIT</a>
+                  </li>
+                  
+                  
+                  
+
+                  
+
+                  <li class="list-group-item list-group-item-action">
+                    <a href="/docs/pico/techenv.html" class="nav-link ">Technik und Umgebung</a>
                   </li>
                   
                   
                   
                   
+                  
+
+                  
+
+                  <li class="list-group-item list-group-item-action">
+                    <a href="/docs/pico/install.html" class="nav-link active fw-bold ">Installation</a>
+                  </li>
+                  
+                  
                   </ul>
                 </div>
                 <div class="col-9">
-                <p>Die folgenden Anweisungen sind ohne Admin-Berechtigung und nur über User pi durchzuführen.</p>
+                <h4 id="allgemeine-installationsinformationen">Allgemeine Installationsinformationen</h4>
+
+<p>Die folgenden Anweisungen sind ohne Admin-Berechtigung und nur über User pi durchzuführen.</p>
 
 <ol>
   <li>Bevor turbohirn:pico auf einem Raspberry installiert wird, ist es wichtig die Umgebung, mit folgenden Befehl, zu aktualisieren:<br />
@@ -440,6 +464,45 @@
     </ul>
   </li>
 </ol>
+
+<hr />
+
+<h4 id="sensoren">Sensoren</h4>
+<p>Installationsanleitung für 1Wire-Sensoren und für Adafruit DHT-Serie</p>
+<ol>
+  <li>1-Wire - Installation über Kommandozeile:
+    <ul>
+      <li>Alle Module anzeigen lassen<br />
+  <code class="language-plaintext highlighter-rouge">sudo lsmod</code></li>
+      <li><em>Aktivierung des 1-Wire Buses.</em>\ Dies erfolgt mit folgenden Befehlen:<br />
+<code class="language-plaintext highlighter-rouge">sudo modprobe wire</code><br />
+<code class="language-plaintext highlighter-rouge">sudo modprobe w1-gpio pullup=1</code><br />
+<code class="language-plaintext highlighter-rouge">sudo modprobe w1-therm</code></li>
+      <li><em>Module in der config.txt.</em>\ Ab Kernel 3.8 ist die Datei config.txt für das Laden der Module zuständig.<br />
+<code class="language-plaintext highlighter-rouge">sudo nano /boot/config.txt</code><br />
+<code class="language-plaintext highlighter-rouge"># Temperatursensor an 1-Wire</code><br />
+<code class="language-plaintext highlighter-rouge">dtoverlay=w1-gpio</code><br />
+<code class="language-plaintext highlighter-rouge">gpiopin=4</code><br />
+Den RaspBerry neu starten.</li>
+      <li><em>Funktionsweise prüfen</em><br />
+Dies kann mit folgenden Befehlen durchgeführt werden:<br />
+<code class="language-plaintext highlighter-rouge">sudo lsmod</code><br />
+<code class="language-plaintext highlighter-rouge">cd /sys/bus/w1/devices</code><br />
+<code class="language-plaintext highlighter-rouge">ls cat /sys/bus/w1/devices/28-000005d2e508/w1_slave</code></li>
+      <li>Links:
+        <ul>
+          <li><a href="https://www.raspberrypi-spy.co.uk/2018/02/enable-1-wire-interface-raspberry-pi/">Raspberry Pi Setup</a></li>
+          <li><a href="https://forums.raspberrypi.com/viewtopic.php?t=122319">Python Setup</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Adafruit DHT, Kommandozeile:<br />
+<code class="language-plaintext highlighter-rouge">sudo pip3 install adafruit-circuitpython-dht</code><br />
+<code class="language-plaintext highlighter-rouge">sudo apt-get install libgpiod2</code><br />
+Link: <a href="https://learn.adafruit.com/dht-humidity-sensing-on-raspberry-pi-with-gdocs-logging/python-setup">Python Setup</a></li>
+</ol>
+
 
                 </div>
 
