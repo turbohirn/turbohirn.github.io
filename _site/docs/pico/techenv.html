@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
   <head>
     <meta charset="utf-8" />
-    <title>Turbohirn docs | Erster Blog!</title>
+    <title>Turbohirn docs | Technik und Umgebung</title>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="apple-mobile-web-app-title" content="turbohirn on Github"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
@@ -333,6 +333,8 @@
                     
                 
                     
+                
+                    
                         
                         <li class="nav-item"><a href="/docs/index.html"  class="nav-link ">Dokumentationen</a></li>
                     
@@ -365,30 +367,124 @@
 
                 
                 
-                <div class="col-9">
-                  <h1 class="display-6">Erster Blog!</h1><hr/>
-                  <h1 id="moin">Moin</h1>
 
-<p>adasdad</p>
-
-<p><code class="language-plaintext highlighter-rouge">YEAR-MONTH-DAY-title.MARKUP</code></p>
-
-                  
-                                
+                <div class="col-12">
+                  <h1 class="display-6">Technik und Umgebung</h1><hr/>
                 </div>
                 <div class="col-3">
-                  <ul>
-                    
-                      <li>
-                        <a href="/jekyll/update/2022/08/27/my-new-post.html">Erster Blog!</a>
-                      </li>
-                    
-                      <li>
-                        <a href="/jekyll/update/2022/08/02/welcome-to-jekyll.html">Welcome to Jekyll!</a>
-                      </li>
-                    
+                  <ul class="list-group">
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+
+                  
+
+                  <li class="list-group-item list-group-item-action">
+                    <a href="/docs/pico/start.html" class="nav-link ">Einleitung</a>
+                  </li>
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+
+                  
+
+                  <li class="list-group-item list-group-item-action">
+                    <a href="/docs/pico/goals.html" class="nav-link ">Ziele</a>
+                  </li>
+                  
+                  
+                  
+
+                  
+
+                  <li class="list-group-item list-group-item-action">
+                    <a href="/docs/pico/versions.html" class="nav-link ">Versionierung und GIT</a>
+                  </li>
+                  
+                  
+                  
+
+                  
+
+                  <li class="list-group-item list-group-item-action">
+                    <a href="/docs/pico/techenv.html" class="nav-link active fw-bold ">Technik und Umgebung</a>
+                  </li>
+                  
+                  
+                  
+                  
+                  
+
+                  
+
+                  <li class="list-group-item list-group-item-action">
+                    <a href="/docs/pico/install.html" class="nav-link ">Installation</a>
+                  </li>
+                  
+                  
                   </ul>
                 </div>
+                <div class="col-9">
+                <h4 id="hardware">Hardware</h4>
+<p>Für den Betrieb ist ein Raspberry Pi, ab Verion 3 notwendig. Auflistung der notwendigen Hardware (Testumgebung):</p>
+<ol>
+  <li>Raspberry Pi ab 3b+ (Menge = 1), Funktion: Hostsystem mit Datenspeicher</li>
+  <li>GeeekPi GPIO Screw Terminal Hat, Funktion: Optische Anzeige der konfigurierten Pins
+Mindestvoraussetzungen:
+    <ul>
+      <li>Raspberry Pi Zero mit 512MB RAM,</li>
+      <li>microSD mit 32 GB,</li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="software">Software</h4>
+<p>Die Applikation wird in JavaScript für das Frontend und Python für das Backend umgesetzt.</p>
+<ol>
+  <li>Frontend<br />
+Bei der JS-Frontend-Programmierung kommen folgende Bibliotheken zum Einsatz:
+    <ul>
+      <li>Bootstrap 5.x</li>
+      <li>react.js</li>
+      <li>react-bootstrap</li>
+      <li>socket-io</li>
+    </ul>
+  </li>
+  <li>Backend/Server<br />
+Für das Backend und werden folgende Umgebungen und Bibliotheken benötigt:
+    <ul>
+      <li>Python ab 3.7.x<br />
+ Python Bibliotheken:
+        <ul>
+          <li>socket-io,</li>
+          <li>aiohttp,</li>
+          <li>asyncio,</li>
+          <li>aiohttp_compress,</li>
+        </ul>
+      </li>
+    </ul>
+
+    <p>Das Bash-Script setup.sh installiert auf Wunsch alle Updates und Bibliotheken.</p>
+  </li>
+</ol>
+
+                </div>
+
                 
             </div>
 
