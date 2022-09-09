@@ -33,3 +33,23 @@ Für das Backend und werden folgende Umgebungen und Bibliotheken benötigt:
         * aiohttp_compress,
     
     Das Bash-Script setup.sh installiert auf Wunsch alle Updates und Bibliotheken.
+
+#### Entwicklungsumgebung
+
+Node.js Installation und Update  
+Zur Einrichtung auf einem macOS- oder Linux-Desktop  
+Installationsdatei: [Nodes.js für Mac](https://nodejs.org/en/download/)  
+Update von Node.js
+1. `$ sudo npm cache clean -f`
+2. `$ sudo npm install -g n`
+3. `$ sudo n stable`
+4. `$ # node -v`
+
+Aktualisierung des NPM-Package managers
+1. `$ sudo npm install -g npm@latest`
+
+Python3-Befehle auf RPI
+* Kontrolle was läuft:  
+`$ ps aux | grep -i python`
+* Python-Server-Prozess hart beenden:  
+`$ killall python oder $ pkill -f run.py`
