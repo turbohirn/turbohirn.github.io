@@ -6,7 +6,8 @@ layout: page
 title: Home
 permalink: /
 sort: 1
+level: 1
 ---
 
 
-Meine Startseite
+Willkommen auf der Doku-Seite von **turbohirn**. Hier findest du alle Projekte zum Thema Raspberry Pi.
