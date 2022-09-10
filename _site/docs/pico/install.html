@@ -298,62 +298,65 @@
 
 </svg>	
 
-    <header> 
+    <header class="bg-secondary"> 
         
-        <nav class="navbar navbar-expand-lg bg-light border-bottom">
-            <div class="container">
+        <nav class="container navbar navbar-dark navbar-expand-lg px-2">
+
                 
-              <a class="navbar-brand nav-link" href="/">
-                
-                <svg class="d-inline-block align-text-middle" style="height:2em; width:2rem;">
-                    <use xlink:href="#s-logo-bot" style="fill:#444"></use>
-                </svg>
-                Turbohirn docs</a>
+            <a class="navbar-brand nav-link" href="/">
               
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                
-                
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                        
-                        <li class="nav-item"><a href="/docs/index.html"  class="nav-link ">Dokumentationen</a></li>
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                        
-                        <li class="nav-item"><a href="/about/index.html"  class="nav-link ">About</a></li>
-                    
-                
-                    
-                
-               
-                </ul>
-                </div>
-            </div>
+              <svg class="d-inline-block align-text-middle" style="height:2em; width:2rem;">
+                  <use xlink:href="#s-logo-bot" style="fill:#fff"></use>
+              </svg>
+              Turbohirn docs</a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              
+              
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+                      
+                      <li class="nav-item"><a href="/"  class="nav-link ">Home</a></li>
+                  
+              
+                  
+              
+                  
+              
+                  
+                      
+                      <li class="nav-item"><a href="/docs/index.html"  class="nav-link ">Dokumentationen</a></li>
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+                      
+                      <li class="nav-item"><a href="/about/index.html"  class="nav-link ">About</a></li>
+                  
+              
+                  
+              
+              
+              </ul>
+              </div>
+
         </nav>
 
         
@@ -369,8 +372,8 @@
                 <div class="col-12">
                   <h1 class="display-6">Installation</h1><hr/>
                 </div>
-                <div class="col-3">
-                  <ul class="list-group">
+                <div class="col-md-4 col-lg-3">
+                  <ul class="list-group mb-4 border">
                   
                   
                   
@@ -388,8 +391,8 @@
 
                   
 
-                  <li class="list-group-item list-group-item-action">
-                    <a href="/docs/pico/start.html" class="nav-link ">Einleitung</a>
+                  <li class="list-group-item list-group-item-action border-0 p-2">
+                    <a href="/docs/pico/start.html" class="nav-link ">&raquo; Einleitung</a>
                   </li>
                   
                   
@@ -399,8 +402,8 @@
 
                   
 
-                  <li class="list-group-item list-group-item-action">
-                    <a href="/docs/pico/goals.html" class="nav-link ">Ziele</a>
+                  <li class="list-group-item list-group-item-action border-0 p-2">
+                    <a href="/docs/pico/goals.html" class="nav-link ">&raquo; Ziele</a>
                   </li>
                   
                   
@@ -408,8 +411,8 @@
 
                   
 
-                  <li class="list-group-item list-group-item-action">
-                    <a href="/docs/pico/versions.html" class="nav-link ">Versionierung und GIT</a>
+                  <li class="list-group-item list-group-item-action border-0 p-2">
+                    <a href="/docs/pico/versions.html" class="nav-link ">&raquo; Versionierung und GIT</a>
                   </li>
                   
                   
@@ -417,8 +420,8 @@
 
                   
 
-                  <li class="list-group-item list-group-item-action">
-                    <a href="/docs/pico/techenv.html" class="nav-link ">Technik und Umgebung</a>
+                  <li class="list-group-item list-group-item-action border-0 p-2">
+                    <a href="/docs/pico/techenv.html" class="nav-link ">&raquo; Technik und Umgebung</a>
                   </li>
                   
                   
@@ -428,15 +431,15 @@
 
                   
 
-                  <li class="list-group-item list-group-item-action">
-                    <a href="/docs/pico/install.html" class="nav-link active fw-bold ">Installation</a>
+                  <li class="list-group-item list-group-item-action border-0 p-2">
+                    <a href="/docs/pico/install.html" class="nav-link active fw-bold ">&raquo; Installation</a>
                   </li>
                   
                   
                   </ul>
                 </div>
-                <div class="col-9">
-                <h4 id="allgemeine-installationsinformationen">Allgemeine Installationsinformationen</h4>
+                <div class="col-md-8 col-lg-9">
+                <h5 id="allgemeine-installationsinformationen">Allgemeine Installationsinformationen</h5>
 
 <p>Die folgenden Anweisungen sind ohne Admin-Berechtigung und nur über User pi durchzuführen.</p>
 
@@ -467,7 +470,7 @@
 
 <hr />
 
-<h4 id="sensoren">Sensoren</h4>
+<h5 id="sensoren">Sensoren</h5>
 <p>Installationsanleitung für 1Wire-Sensoren und für Adafruit DHT-Serie</p>
 <ol>
   <li>1-Wire - Installation über Kommandozeile:

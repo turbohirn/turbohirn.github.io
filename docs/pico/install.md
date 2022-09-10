@@ -7,7 +7,7 @@ sort: 5
 ---
 
 
-#### Allgemeine Installationsinformationen
+##### Allgemeine Installationsinformationen
 
 Die folgenden Anweisungen sind ohne Admin-Berechtigung und nur über User pi durchzuführen.
 
@@ -30,7 +30,7 @@ Die folgenden Anweisungen sind ohne Admin-Berechtigung und nur über User pi dur
 
 ***
 
-#### Sensoren
+##### Sensoren
 Installationsanleitung für 1Wire-Sensoren und für Adafruit DHT-Serie
 1. 1-Wire - Installation über Kommandozeile:
     * Alle Module anzeigen lassen  

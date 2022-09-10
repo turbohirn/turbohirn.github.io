@@ -30,39 +30,39 @@
 
     {% include symbols.svg %}
 
-    <header> 
+    <header class="bg-secondary"> 
         
-        <nav class="navbar navbar-expand-lg bg-light border-bottom">
-            <div class="container">
+        <nav class="container navbar navbar-dark navbar-expand-lg px-2">
+
                 
-              <a class="navbar-brand nav-link" href="/">
-                
-                <svg class="d-inline-block align-text-middle" style="height:2em; width:2rem;">
-                    <use xlink:href="#s-logo-bot" style="fill:#444"></use>
-                </svg>
-                {{ site.title }}</a>
+            <a class="navbar-brand nav-link" href="/">
               
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                {% assign plink = page.permalink %}
-                {% assign pages = site.pages | sort: 'sort' %}
-                {% for _doc in pages %}
-                    {% if _doc.layout == 'page' and _doc.level == 1 %}
-                        {% if plink == _doc.permalink %}
-                        {% assign aclass = 'active'%}
-                        {% else %}
-                        {% assign aclass = ''%}
-                        {% endif %}
-                        <li class="nav-item"><a href="{{_doc.permalink}}"  class="nav-link {{ aclass }}">{{_doc.title}}</a></li>
-                    {% endif %}
-                {% endfor %}
-               
-                </ul>
-                </div>
-            </div>
+              <svg class="d-inline-block align-text-middle" style="height:2em; width:2rem;">
+                  <use xlink:href="#s-logo-bot" style="fill:#fff"></use>
+              </svg>
+              {{ site.title }}</a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              {% assign plink = page.permalink %}
+              {% assign pages = site.pages | sort: 'sort' %}
+              {% for _doc in pages %}
+                  {% if _doc.layout == 'page' and _doc.level == 1 %}
+                      {% if plink == _doc.permalink %}
+                      {% assign aclass = 'active'%}
+                      {% else %}
+                      {% assign aclass = ''%}
+                      {% endif %}
+                      <li class="nav-item"><a href="{{_doc.permalink}}"  class="nav-link {{ aclass }}">{{_doc.title}}</a></li>
+                  {% endif %}
+              {% endfor %}
+              
+              </ul>
+              </div>
+
         </nav>
 
         
@@ -74,7 +74,7 @@
 
                 
                 {% if page.level < 2 %}
-                <div class="col-9">
+                <div class="col-md-8 col-lg-9">
                   <h1 class="display-6">{{ page.title }}</h1><hr/>
                   {{ content }}
                   {% if page.sub %}
@@ -99,22 +99,31 @@
                   {% endif %}
                                 
                 </div>
-                <div class="col-3">
-                  <ul>
-                    {% for post in site.posts %}
-                      <li>
-                        <a href="{{ post.url }}">{{ post.title }}</a>
-                      </li>
-                    {% endfor %}
-                  </ul>
-                </div>
+                <div class="col-md-4 col-lg-3">
+
+
+                  <div class="card mt-4 mt-sm-0" style="width: 18rem;">
+                    <div class="card-header">
+                      <h6 class="card-title">Important Releases</h6>
+                      <p class="card-subtitle mb-2 text-muted">Neue Veröffentlichungen aus den Projekten</p>
+                    </div>
+                    <div class="card-body">
+                    {% if site.posts.size > 0 %}
+                      {% for post in site.posts %}
+                        <a href="{{ post.url }}" class="card-link">{{ post.title }}</a>
+                      {% endfor %}
+                    {% else %}
+                      Noch keine Releases verfügbar!
+                    {% endif %}
+                    </div>
+                  </div>
                 {% else %}
 
                 <div class="col-12">
                   <h1 class="display-6">{{ page.title }}</h1><hr/>
                 </div>
-                <div class="col-3">
-                  <ul class="list-group">
+                <div class="col-md-4 col-lg-3">
+                  <ul class="list-group mb-4 border">
                   {% for _doc in pages %}
                   {% if _doc.layout == 'page' and _doc.level == 3 %}
 
@@ -124,14 +133,14 @@
                   {% assign aclass = ''%}
                   {% endif %}
 
-                  <li class="list-group-item list-group-item-action">
-                    <a href="{{_doc.permalink}}" class="nav-link {{ aclass }}">{{_doc.title}}</a>
+                  <li class="list-group-item list-group-item-action border-0 p-2">
+                    <a href="{{_doc.permalink}}" class="nav-link {{ aclass }}">&raquo; {{_doc.title}}</a>
                   </li>
                   {% endif %}
                   {% endfor %}
                   </ul>
                 </div>
-                <div class="col-9">
+                <div class="col-md-8 col-lg-9">
                 {{ content }}
                 </div>
 

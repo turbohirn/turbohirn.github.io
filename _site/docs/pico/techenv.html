@@ -298,64 +298,67 @@
 
 </svg>	
 
-    <header> 
+    <header class="bg-secondary"> 
         
-        <nav class="navbar navbar-expand-lg bg-light border-bottom">
-            <div class="container">
+        <nav class="container navbar navbar-dark navbar-expand-lg px-2">
+
                 
-              <a class="navbar-brand nav-link" href="/">
-                
-                <svg class="d-inline-block align-text-middle" style="height:2em; width:2rem;">
-                    <use xlink:href="#s-logo-bot" style="fill:#444"></use>
-                </svg>
-                Turbohirn docs</a>
+            <a class="navbar-brand nav-link" href="/">
               
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                
-                
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                        
-                        <li class="nav-item"><a href="/docs/index.html"  class="nav-link ">Dokumentationen</a></li>
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                        
-                        <li class="nav-item"><a href="/about/index.html"  class="nav-link ">About</a></li>
-                    
-                
-                    
-                
-               
-                </ul>
-                </div>
-            </div>
+              <svg class="d-inline-block align-text-middle" style="height:2em; width:2rem;">
+                  <use xlink:href="#s-logo-bot" style="fill:#fff"></use>
+              </svg>
+              Turbohirn docs</a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              
+              
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+                      
+                      <li class="nav-item"><a href="/"  class="nav-link ">Home</a></li>
+                  
+              
+                  
+                      
+                      <li class="nav-item"><a href="/docs/index.html"  class="nav-link ">Dokumentationen</a></li>
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+                      
+                      <li class="nav-item"><a href="/about/index.html"  class="nav-link ">About</a></li>
+                  
+              
+                  
+              
+              
+              </ul>
+              </div>
+
         </nav>
 
         
@@ -371,8 +374,8 @@
                 <div class="col-12">
                   <h1 class="display-6">Technik und Umgebung</h1><hr/>
                 </div>
-                <div class="col-3">
-                  <ul class="list-group">
+                <div class="col-md-4 col-lg-3">
+                  <ul class="list-group mb-4 border">
                   
                   
                   
@@ -390,8 +393,8 @@
 
                   
 
-                  <li class="list-group-item list-group-item-action">
-                    <a href="/docs/pico/start.html" class="nav-link ">Einleitung</a>
+                  <li class="list-group-item list-group-item-action border-0 p-2">
+                    <a href="/docs/pico/start.html" class="nav-link ">&raquo; Einleitung</a>
                   </li>
                   
                   
@@ -403,8 +406,8 @@
 
                   
 
-                  <li class="list-group-item list-group-item-action">
-                    <a href="/docs/pico/goals.html" class="nav-link ">Ziele</a>
+                  <li class="list-group-item list-group-item-action border-0 p-2">
+                    <a href="/docs/pico/goals.html" class="nav-link ">&raquo; Ziele</a>
                   </li>
                   
                   
@@ -412,8 +415,8 @@
 
                   
 
-                  <li class="list-group-item list-group-item-action">
-                    <a href="/docs/pico/versions.html" class="nav-link ">Versionierung und GIT</a>
+                  <li class="list-group-item list-group-item-action border-0 p-2">
+                    <a href="/docs/pico/versions.html" class="nav-link ">&raquo; Versionierung und GIT</a>
                   </li>
                   
                   
@@ -421,8 +424,8 @@
 
                   
 
-                  <li class="list-group-item list-group-item-action">
-                    <a href="/docs/pico/techenv.html" class="nav-link active fw-bold ">Technik und Umgebung</a>
+                  <li class="list-group-item list-group-item-action border-0 p-2">
+                    <a href="/docs/pico/techenv.html" class="nav-link active fw-bold ">&raquo; Technik und Umgebung</a>
                   </li>
                   
                   
@@ -432,15 +435,15 @@
 
                   
 
-                  <li class="list-group-item list-group-item-action">
-                    <a href="/docs/pico/install.html" class="nav-link ">Installation</a>
+                  <li class="list-group-item list-group-item-action border-0 p-2">
+                    <a href="/docs/pico/install.html" class="nav-link ">&raquo; Installation</a>
                   </li>
                   
                   
                   </ul>
                 </div>
-                <div class="col-9">
-                <h4 id="hardware">Hardware</h4>
+                <div class="col-md-8 col-lg-9">
+                <h5 id="hardware">Hardware</h5>
 <p>Für den Betrieb ist ein Raspberry Pi, ab Verion 3 notwendig. Auflistung der notwendigen Hardware (Testumgebung):</p>
 <ol>
   <li>Raspberry Pi ab 3b+ (Menge = 1), Funktion: Hostsystem mit Datenspeicher</li>
@@ -453,7 +456,7 @@ Mindestvoraussetzungen:
   </li>
 </ol>
 
-<h4 id="software">Software</h4>
+<h5 id="software">Software</h5>
 <p>Die Applikation wird in JavaScript für das Frontend und Python für das Backend umgesetzt.</p>
 <ol>
   <li>Frontend<br />
@@ -483,7 +486,7 @@ Für das Backend und werden folgende Umgebungen und Bibliotheken benötigt:
   </li>
 </ol>
 
-<h4 id="entwicklungsumgebung">Entwicklungsumgebung</h4>
+<h5 id="entwicklungsumgebung">Entwicklungsumgebung</h5>
 
 <p>Node.js Installation und Update<br />
 Zur Einrichtung auf einem macOS- oder Linux-Desktop<br />
