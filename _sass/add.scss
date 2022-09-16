@@ -1,0 +1,14 @@
+table {
+
+    tr {
+        &:first-child{
+            background-color: #e9ecef;
+            font-weight:bold;
+        }
+        td {
+            padding:1em;
+            vertical-align: top;
+            border: 1px solid #ccc;
+        }
+    }
+}

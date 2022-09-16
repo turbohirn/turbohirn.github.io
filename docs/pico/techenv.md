@@ -8,7 +8,7 @@ sort: 4
 
 ##### Hardware
 Für den Betrieb ist ein Raspberry Pi, ab Verion 3 notwendig. Auflistung der notwendigen Hardware (Testumgebung):
-1. Raspberry Pi ab 3b+ (Menge = 1), Funktion: Hostsystem mit Datenspeicher
+1. Raspberry Pi ab 3b+, Funktion: Hostsystem mit Datenspeicher
 2. GeeekPi GPIO Screw Terminal Hat, Funktion: Optische Anzeige der konfigurierten Pins
 Mindestvoraussetzungen:
 * Raspberry Pi Zero mit 512MB RAM,

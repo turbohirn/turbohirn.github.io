@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
   <head>
     <meta charset="utf-8" />
-    <title>Turbohirn docs | Einleitung</title>
+    <title>Turbohirn docs | Grundlegendes zum Programm</title>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="apple-mobile-web-app-title" content="turbohirn on Github"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
@@ -336,8 +336,6 @@
                   
               
                   
-              
-                  
                       
                       <li class="nav-item"><a href="/docs/index.html"  class="nav-link ">Dokumentationen</a></li>
                   
@@ -376,16 +374,10 @@
                 
 
                 <div class="col-12">
-                  <h1 class="display-6">Einleitung</h1><hr/>
+                  <h1 class="display-6">Grundlegendes zum Programm</h1><hr/>
                 </div>
                 <div class="col-md-4 col-lg-3">
                   <ul class="list-group mb-4 border">
-                  
-                  
-                  
-                  
-                  
-                  
                   
                   
                   
@@ -400,8 +392,12 @@
                   
 
                   <li class="list-group-item list-group-item-action border-0 p-2">
-                    <a href="/docs/pico/start.html" class="nav-link active fw-bold " title="start.md">&raquo; Einleitung</a>
+                    <a href="/docs/pico/start.html" class="nav-link " title="start.md">&raquo; Einleitung</a>
                   </li>
+                  
+                  
+                  
+                  
                   
                   
                   
@@ -449,7 +445,7 @@
                   
 
                   <li class="list-group-item list-group-item-action border-0 p-2">
-                    <a href="/docs/pico/basics.html" class="nav-link " title="basics.md">&raquo; Grundlegendes zum Programm</a>
+                    <a href="/docs/pico/basics.html" class="nav-link active fw-bold " title="basics.md">&raquo; Grundlegendes zum Programm</a>
                   </li>
                   
                   
@@ -465,11 +461,46 @@
                   </ul>
                 </div>
                 <div class="col-md-8 col-lg-9">
-                <p>Schaffung der Möglichkeit einer freie Konfiguration von GPIOs des Raspberry Pis via App, Mobile und Desktop. Dabei soll für jeden einzelnen programmierbaren GPIO-PIN der Modus individuell festgelegt werden können. Dies soll durch eine webbasierte und hostnahe Applikation bewerkstelligt werden.</p>
+                <h5 id="einleitung">Einleitung</h5>
+<p>Die Daten werden im JSON-Format in der Datei /cfg/stored.json abgelegt. Diese Datei wird beim Start des Programms, mit folgender Datendefinition, angelegt.
+Datendefinitionen:</p>
 
-<p>Der Plan ist, die Applikation in nur zwei Ausführungsschichten (Excution Level 1 und 2, kurz EL1 und EL2) anzulegen. Die erste Schicht ist ein  python-basiertes Script, welches direkt in einer Shell gestartet werden kann. Diese Schicht stellt Web- und WebSocket-Server bereit und führt host-nahe Kommandos, wie z.B. das Steuern von GPIOs und zyklischen Routinen, aus. Darunter ist in erster Linie die Steuerung und die Entgegennahme von GPIO-Zuständen zu verstehen.</p>
+<table>
+  <tbody>
+    <tr>
+      <td>Name/Key</td>
+      <td>Datentyp</td>
+      <td>Funktion/Kommentar</td>
+    </tr>
+    <tr>
+      <td>store</td>
+      <td>Dictionary</td>
+      <td>Wurzelelement</td>
+    </tr>
+    <tr>
+      <td>store/pins</td>
+      <td>Dictionary</td>
+      <td>Liste aller definierter Pins (ListItems)</td>
+    </tr>
+    <tr>
+      <td>store/actors</td>
+      <td>Dictionary</td>
+      <td>Ablage des initialen Frontend-Users und weiterer Nutzer.</td>
+    </tr>
+    <tr>
+      <td>store/user</td>
+      <td>Dictionary</td>
+      <td>Ablage des initialen Frontend-Users und weiterer Nutzer. Variablenliste mit den Feldern für Benutzer und Passwort, Datentyp String, Standardwert für ersten Listeneintrag: usr = ‘root’, pwd = ‘’</td>
+    </tr>
+  </tbody>
+</table>
 
-<p>Die zweite Schicht wird in einer browserbasierten Oberfläche (Client) gestartet und bereitet die Daten zum Abspeichern für die erste Schicht auf. Das kann ein Client-Browser oder eine App mit Framed-HTML-Funktion sein. Die Kommunikation zwischen den Schichten wird via WebSocket realisiert. Der Server ist in Python geschrieben und der Client ist in React JS verfasst.</p>
+<p><br /></p>
+
+<h5 id="programmstart">Programmstart</h5>
+<p>Wurde bereits eine Reihe von Pins (im Modus OUT) konfiguriert, werden diese beim Programmstart gesondert behandelt. Dies ist besonders bei Neustarts, Systemumzug, etc. notwendig. Bevor der Webserver gestartet wird, werden die gespeicherten Pins zyklisch gestartet. Das bedeutet im Detail: Jeder Pin im Modus OUT wird mit dem Status gestartet, in dem er zuletzt gespeichert wurde. Um Überlastungen des Stromnetzes bei gesteuerten Relais mit Stromschaltungen zu verhindern, werden diese mit einem Abstand von einer Sekunde separat gestartet. Dieser Zyklus kann in der Konfiguration angepasst werden. Sinnvoll ist dies, wenn Stromverbraucher beim Einschalten länger als eine Sekunde benötigen.
+Konfigurierte Zeitsteuerungen und Steuerungen über die definierten Eingangszustände  werden mit der python-internen HeartBeat-Methode automatisch gestartet.</p>
+
 
                 </div>
 
