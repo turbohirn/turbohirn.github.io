@@ -6,7 +6,9 @@ permalink: /docs/pico/techenv.html
 sort: 4
 ---
 
-##### Hardware
+## Hardware 
+{: .display-6 .fs-3 }
+
 Für den Betrieb ist ein Raspberry Pi, ab Verion 3 notwendig. Auflistung der notwendigen Hardware (Testumgebung):
 1. Raspberry Pi ab 3b+, Funktion: Hostsystem mit Datenspeicher
 2. GeeekPi GPIO Screw Terminal Hat, Funktion: Optische Anzeige der konfigurierten Pins
@@ -15,7 +17,9 @@ Mindestvoraussetzungen:
 * microSD mit 32 GB,
 
 
-##### Software
+## Software
+{: .display-6 .fs-3 }
+
 Die Applikation wird in JavaScript für das Frontend und Python für das Backend umgesetzt.
 1. Frontend  
 Bei der JS-Frontend-Programmierung kommen folgende Bibliotheken zum Einsatz:
@@ -34,7 +38,8 @@ Für das Backend und werden folgende Umgebungen und Bibliotheken benötigt:
     
     Das Bash-Script setup.sh installiert auf Wunsch alle Updates und Bibliotheken.
 
-##### Entwicklungsumgebung
+## Entwicklungsumgebung
+{: .display-6 .fs-3 }
 
 Node.js Installation und Update  
 Zur Einrichtung auf einem macOS- oder Linux-Desktop  

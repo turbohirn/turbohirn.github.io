@@ -18,7 +18,9 @@ Diese Angabe repräsentiert den Merge in den Hauptzweig (main) und den davon abg
 
 ***
 
-##### GIT-Repository ####
+## GIT-Repository
+{: .display-6 .fs-3 }
+
 Dieses Projekt ist einem Repository bei GitHub abgelegt → https://github.com/turbohirn/pico.git. Die Entwicklungs- und Veröffentlichungszweige gliedern sich wie folgt:  
 
 1. *main* - alle Ressourcen; Backup aller Quellen.  
