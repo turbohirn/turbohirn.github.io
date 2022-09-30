@@ -7,7 +7,8 @@ sort: 5
 ---
 
 
-##### Allgemeine Installationsinformationen
+## Allgemeine Installationsinformationen
+{: .display-6 .fs-3 }
 
 Die folgenden Anweisungen sind ohne Admin-Berechtigung und nur über User pi durchzuführen.
 

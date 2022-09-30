@@ -1,14 +1,15 @@
 table {
-
+    width: 100%;
     tr {
-        &:first-child{
-            background-color: #e9ecef;
-            font-weight:bold;
-        }
-        td {
-            padding:1em;
+        th, td {
+            padding:0.5em;
             vertical-align: top;
             border: 1px solid #ccc;
+        }
+        th {
+            text-align: center;
+            background-color: #e9ecef;
+            font-weight:bold;
         }
     }
 }

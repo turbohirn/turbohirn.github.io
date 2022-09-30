@@ -347,10 +347,14 @@
                   
               
                   
-              
-                  
                       
                       <li class="nav-item"><a href="/about/index.html"  class="nav-link ">About</a></li>
+                  
+              
+                  
+              
+                  
+              
                   
               
                   
@@ -430,14 +434,14 @@
                   
                   
                   
+                  
+                  
 
                   
 
                   <li class="list-group-item list-group-item-action border-0 p-2">
                     <a href="/docs/pico/install.html" class="nav-link " title="install.md">&raquo; Installation</a>
                   </li>
-                  
-                  
                   
                   
                   
@@ -458,20 +462,41 @@
                   </li>
                   
                   
+                  
+
+                  
+
+                  <li class="list-group-item list-group-item-action border-0 p-2">
+                    <a href="/docs/pico/modus.html" class="nav-link " title="modus.md">&raquo; GPIO Modus</a>
+                  </li>
+                  
+                  
+                  
+
+                  
+
+                  <li class="list-group-item list-group-item-action border-0 p-2">
+                    <a href="/docs/pico/switch.html" class="nav-link " title="switch.md">&raquo; GPIO Switch</a>
+                  </li>
+                  
+                  
                   </ul>
                 </div>
                 <div class="col-md-8 col-lg-9">
-                <h5 id="einleitung">Einleitung</h5>
+                <h2 class="display-6 fs-3" id="einleitung">Einleitung</h2>
+
 <p>Die Daten werden im JSON-Format in der Datei /cfg/stored.json abgelegt. Diese Datei wird beim Start des Programms, mit folgender Datendefinition, angelegt.
 Datendefinitionen:</p>
 
 <table>
-  <tbody>
+  <thead>
     <tr>
-      <td>Name/Key</td>
-      <td>Datentyp</td>
-      <td>Funktion/Kommentar</td>
+      <th>Name/Key</th>
+      <th>Datentyp</th>
+      <th>Funktion/Kommentar</th>
     </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>store</td>
       <td>Dictionary</td>
@@ -497,7 +522,8 @@ Datendefinitionen:</p>
 
 <p><br /></p>
 
-<h5 id="programmstart">Programmstart</h5>
+<h2 class="display-6 fs-3" id="programmstart">Programmstart</h2>
+
 <p>Wurde bereits eine Reihe von Pins (im Modus OUT) konfiguriert, werden diese beim Programmstart gesondert behandelt. Dies ist besonders bei Neustarts, Systemumzug, etc. notwendig. Bevor der Webserver gestartet wird, werden die gespeicherten Pins zyklisch gestartet. Das bedeutet im Detail: Jeder Pin im Modus OUT wird mit dem Status gestartet, in dem er zuletzt gespeichert wurde. Um Überlastungen des Stromnetzes bei gesteuerten Relais mit Stromschaltungen zu verhindern, werden diese mit einem Abstand von einer Sekunde separat gestartet. Dieser Zyklus kann in der Konfiguration angepasst werden. Sinnvoll ist dies, wenn Stromverbraucher beim Einschalten länger als eine Sekunde benötigen.
 Konfigurierte Zeitsteuerungen und Steuerungen über die definierten Eingangszustände  werden mit der python-internen HeartBeat-Methode automatisch gestartet.</p>
 
