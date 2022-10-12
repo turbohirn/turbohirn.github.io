@@ -1,6 +1,6 @@
 ---
 layout: page
-title: GPIO Modus
+title: 1. GPIO Modus
 level: 3
 permalink: /docs/pico/modus.html
 sort: 7

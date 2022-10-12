@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
   <head>
     <meta charset="utf-8" />
-    <title>Turbohirn docs | 1. GPIO Modus</title>
+    <title>Turbohirn docs | 5. App settings</title>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="apple-mobile-web-app-title" content="turbohirn on Github"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
@@ -386,7 +386,7 @@
                 
 
                 <div class="col-12">
-                  <h1 class="display-6">1. GPIO Modus</h1><hr/>
+                  <h1 class="display-6">5. App settings</h1><hr/>
                 </div>
                 <div class="col-md-4 col-lg-3">
                   <ul class="list-group mb-4 border">
@@ -477,7 +477,7 @@
                   
 
                   <li class="list-group-item list-group-item-action border-0 p-2">
-                    <a href="/docs/pico/modus.html" class="nav-link active fw-bold " title="modus.md">&raquo; 1. GPIO Modus</a>
+                    <a href="/docs/pico/modus.html" class="nav-link " title="modus.md">&raquo; 1. GPIO Modus</a>
                   </li>
                   
                   
@@ -513,81 +513,14 @@
                   
 
                   <li class="list-group-item list-group-item-action border-0 p-2">
-                    <a href="/docs/pico/timers.html" class="nav-link " title="settings.md">&raquo; 5. App settings</a>
+                    <a href="/docs/pico/timers.html" class="nav-link active fw-bold " title="settings.md">&raquo; 5. App settings</a>
                   </li>
                   
                   
                   </ul>
                 </div>
                 <div class="col-md-8 col-lg-9">
-                <h2 class="display-6 fs-3" id="1-gpio-modus-konfigurieren">1. GPIO-Modus konfigurieren</h2>
-<p><strong>Modus-Konfiguration aller schaltbarer Pins</strong><br />
-Bevor mit den GPIOs des Raspberry PI - im weiteren RPI - gearbeitet werden kann, muss der Modus für den jeweiligen Pin festgelegt werden. Dabei wird grundlegend zwischen den Modi IN und OUT unterschieden. Ein einmal festgelegter Pin, wird gespeichert und auch nicht mehr aktiv entfernt. Alle weiteren Änderungen an diesem Pin werden dort gespeichert. Nutzerspezifische Bezeichnungen bleiben dem Pin erhalten, auch wenn sich sein weiterer Betriebszweck ändert.</p>
-
-<h3 class="display-6 fs-4" id="klickpfad-und-datentypen">Klickpfad und Datentypen:</h3>
-
-<ol>
-  <li>Klick auf ‘Modus Konfiguration’:
-Übersicht aller Pins wird nach dem RPI-Schema angezeigt. Nur konfigurierbare Pins werden als klickbar markiert.</li>
-  <li>Klick auf konfigurierbaren Pin:
-Es wird ein einfaches Dialogfeld geöffnet. Dort kann über eine SelectBox aus drei Werten ausgewählt werden:
-    <ul>
-      <li><strong>INAKTIV</strong>,  Hierbei wird ein Pin funktionslos gespeichert. Vorraussetzung dafür ist, dass ein bereits gespeicherter Pin über den Modus den Status IN oder OUT verfügt haben. Bezeichner und Beschreibungen bleiben erhalten. Ein so konfigurierter Pin wird nicht in den Listen der Konfiguration angezeigt. Initial kann dieser Status nicht gesetzt werden.<br />
-<strong>Hinweis</strong>: Zusätzlich gesetzte Objekte, wie z.B.: actor, input und state, die ggf. in den weiteren Konfigurationen angelegt wurden, werden automatisch gelöscht.</li>
-      <li><strong>Eingang</strong> (IN)<br />
-  Siehe Punkt 3. GPIO-Input</li>
-      <li><strong>Ausgang</strong> (OUT)<br />
-  Hier wird ein Pin mit der Eigenschaft OUT angelegt.  Hinweis: Zusätzlich gesetzte Objekte, wie z.B. input, werden automatisch gelöscht, wenn aus einem anderen Modus in diesen gewechselt wird.</li>
-    </ul>
-  </li>
-  <li>Klick auf Speichern legt den Pin im Dictionary an. GPIO-Aktionen finden hier, unabhängig vom Modus, noch nicht statt.</li>
-</ol>
-
-<p>Datendefinition:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name/Key</th>
-      <th>Datentyp</th>
-      <th>INAKTIV</th>
-      <th>IN</th>
-      <th>OUT</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>pin</td>
-      <td>Number</td>
-      <td>GPIO-Vorgabe</td>
-      <td> </td>
-      <td>GPIO-Vorgabe</td>
-    </tr>
-    <tr>
-      <td>gpio</td>
-      <td>Number</td>
-      <td>GPIO-Vorgabe</td>
-      <td> </td>
-      <td>GPIO-Vorgabe</td>
-    </tr>
-    <tr>
-      <td>mode</td>
-      <td>Number</td>
-      <td>2</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>state</td>
-      <td>Number</td>
-      <td> </td>
-      <td> </td>
-      <td>1</td>
-    </tr>
-  </tbody>
-</table>
-
-<!-- 1 = AN/AUS,  2 = Temperatur,   3 = Luftfeuchte -->
+                <h2 class="display-6 fs-3" id="5-app-settings">5. App settings</h2>
 
                 </div>
 

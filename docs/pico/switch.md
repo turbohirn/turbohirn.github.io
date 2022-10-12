@@ -1,6 +1,6 @@
 ---
 layout: page
-title: GPIO Switch
+title: 2. GPIO Switch
 level: 3
 permalink: /docs/pico/switch.html
 sort: 8
