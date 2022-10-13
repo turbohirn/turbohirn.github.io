@@ -6,49 +6,39 @@ $_baseFontExtender: Helvetica Neue,Helvetica,Arial,sans-serif;
 /* REGULAR*/
 @font-face {
     font-family: 'r159_r'; //'route_159light';
-    font-style: normal;
-    font-weight: 400;
-    font-display:fallback;
-    src: url($_font_path + 'route159-light-webfont.eot');
-    src: url($_font_path + 'route159-light-webfont.eot?#iefix') format('embedded-opentype'),
-         url($_font_path + 'route159-light-webfont.woff') format('woff'),
-         url($_font_path + 'route159-light-webfont.ttf') format('truetype'),
-         url($_font_path + 'route159-light-webfont.svg#route_159light') format('svg');
-    font-weight: $_baseFontWeight;
-    font-style: $_baseFontWeight;
+    //font-style: normal;
+    //font-weight: 400;
+    //font-display:fallback;
+    src: url($_font_path + 'route159-light.otf') format("opentype");
+    //font-weight: $_baseFontWeight;
+    //font-style: $_baseFontWeight;
 }
 
 /* LIGHT*/
 @font-face {
     font-family: 'r159_ul';//'route_159ultralight';
-    font-style: normal;
-    font-weight: 400;
-    font-display:fallback;
-    src: url($_font_path + 'route159-ultralight-webfont.eot');
-    src: url($_font_path + 'route159-ultralight-webfont.eot?#iefix') format('embedded-opentype'),
-         url($_font_path + 'route159-ultralight-webfont.woff') format('woff'),
-         url($_font_path + 'route159-ultralight-webfont.ttf') format('truetype'),
-         url($_font_path + 'route159-ultralight-webfont.svg#route_159ultralight') format('svg');
-    font-weight: $_baseFontWeight;
-    font-style: $_baseFontWeight;
+    //font-style: normal;
+    //font-weight: 400;
+    //font-display:fallback;
+    src: url($_font_path + 'route159-ultralight.otf') format("opentype");
+    //font-weight: $_baseFontWeight;
+    //font-style: $_baseFontWeight;
 }
 
 /* BOLD */
 @font-face {
   font-family: 'r159_b';//'route159-bold';
+  /*
   font-style: normal;
   font-weight: 400;
   font-display:fallback;
-  src: url($_font_path + 'route159-bold.otf');
-  font-weight: $_baseFontWeight;
-  font-style: $_baseFontWeight;
+  */
+  src: url($_font_path + 'route159-bold.otf') format("opentype");
+  //font-weight: $_baseFontWeight;
+  //font-style: $_baseFontWeight;
 }
 
 $font-family-monospace : SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
-
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{
-	font-weight:bold;
-}
 
 .display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
   font-family: r159_ul, $_baseFontExtender;
