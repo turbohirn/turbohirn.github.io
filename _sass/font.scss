@@ -33,14 +33,29 @@ $_baseFontExtender: Helvetica Neue,Helvetica,Arial,sans-serif;
     font-style: $_baseFontWeight;
 }
 
+/* BOLD */
+@font-face {
+  font-family: 'r159_b';//'route159-bold';
+  font-style: normal;
+  font-weight: 400;
+  font-display:fallback;
+  src: url($_font_path + 'route159-bold.otf');
+  font-weight: $_baseFontWeight;
+  font-style: $_baseFontWeight;
+}
+
 $font-family-monospace : SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{
 	font-weight:bold;
 }
 
 .display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
   font-family: r159_ul, $_baseFontExtender;
+}
+
+strong {
+  font-family: r159_b, $_baseFontExtender;
 }
 
 p, body {  
