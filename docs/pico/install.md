@@ -3,7 +3,7 @@ layout: page
 title: Installation 
 level: 3
 permalink: /docs/pico/install.html
-sort: 5
+sort: 4
 ---
 
 
@@ -31,7 +31,9 @@ Die folgenden Anweisungen sind ohne Admin-Berechtigung und nur über User pi dur
 
 ***
 
-##### Sensoren
+## Sensoren
+{: .display-6 .fs-3 }
+
 Installationsanleitung für 1Wire-Sensoren und für Adafruit DHT-Serie
 1. 1-Wire - Installation über Kommandozeile:
     * Alle Module anzeigen lassen  

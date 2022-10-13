@@ -3,12 +3,13 @@ layout: page
 title: 1. GPIO Modus
 level: 3
 permalink: /docs/pico/modus.html
-sort: 7
+sort: 6
 ---
 
 
-## 1. GPIO-Modus konfigurieren
+## Einzelkonfuguration der GPIOs
 {: .display-6 .fs-3 }
+
 **Modus-Konfiguration aller schaltbarer Pins**  
 Bevor mit den GPIOs des Raspberry PI - im weiteren RPI - gearbeitet werden kann, muss der Modus für den jeweiligen Pin festgelegt werden. Dabei wird grundlegend zwischen den Modi IN und OUT unterschieden. Ein einmal festgelegter Pin, wird gespeichert und auch nicht mehr aktiv entfernt. Alle weiteren Änderungen an diesem Pin werden dort gespeichert. Nutzerspezifische Bezeichnungen bleiben dem Pin erhalten, auch wenn sich sein weiterer Betriebszweck ändert.
 

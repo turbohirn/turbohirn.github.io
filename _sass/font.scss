@@ -5,37 +5,32 @@ $_baseFontExtender: Helvetica Neue,Helvetica,Arial,sans-serif;
 
 /* REGULAR*/
 @font-face {
-    font-family: 'r159_r'; //'route_159light';
-    //font-style: normal;
-    //font-weight: 400;
-    //font-display:fallback;
-    src: url($_font_path + 'route159-light.otf') format("opentype");
-    //font-weight: $_baseFontWeight;
-    //font-style: $_baseFontWeight;
+    font-family: 'r159_r';
+    src: url($_font_path + 'route159-regular.otf') format("opentype");
 }
 
 /* LIGHT*/
 @font-face {
-    font-family: 'r159_ul';//'route_159ultralight';
-    //font-style: normal;
-    //font-weight: 400;
-    //font-display:fallback;
+  font-family: 'r159_l';
+  src: url($_font_path + 'route159-light.otf') format("opentype");
+}
+
+/* ULTRALIGHT*/
+@font-face {
+    font-family: 'r159_ul';
     src: url($_font_path + 'route159-ultralight.otf') format("opentype");
-    //font-weight: $_baseFontWeight;
-    //font-style: $_baseFontWeight;
 }
 
 /* BOLD */
 @font-face {
-  font-family: 'r159_b';//'route159-bold';
-  /*
-  font-style: normal;
-  font-weight: 400;
-  font-display:fallback;
-  */
+  font-family: 'r159_b';
   src: url($_font_path + 'route159-bold.otf') format("opentype");
-  //font-weight: $_baseFontWeight;
-  //font-style: $_baseFontWeight;
+}
+
+/* ITALIC */
+@font-face {
+  font-family: 'r159_i';
+  src: url($_font_path + 'route159-lightitalic.otf') format("opentype");
 }
 
 $font-family-monospace : SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
@@ -44,12 +39,24 @@ $font-family-monospace : SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mo
   font-family: r159_ul, $_baseFontExtender;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: r159_l, $_baseFontExtender;
+}
+
 strong {
   font-family: r159_b, $_baseFontExtender;
 }
 
+em {
+  font-family: r159_i, $_baseFontExtender;
+}
+
 p, body {  
   font-family: r159_r, $_baseFontExtender;
+  line-height: 1.6em;
+}
+section p, section li {
+  color:#455;
 }
 
 a:not(.nav-link) {
