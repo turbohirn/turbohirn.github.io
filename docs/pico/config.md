@@ -3,11 +3,11 @@ layout: page
 title: Programmkonfiguration
 level: 3
 permalink: /docs/pico/config.html
-sort: 6
+sort: 5
 ---
 
 
-## Felder der Konfiguration
+## Datenfelder der Konfiguration
 {: .display-6 .fs-3 }
 
 In der Datei python/config/settings.py werden folgende Standardwerte abgelegt.

@@ -3,9 +3,9 @@ layout: page
 title: 5. App settings
 level: 3
 permalink: /docs/pico/timers.html
-sort: 11
+sort: 10
 ---
 
 
-## 5. App settings
+## Konfiguration und Einstellungen der App
 {: .display-6 .fs-3 }

@@ -2,12 +2,12 @@
 layout: page
 title: 3. GPIO Input
 level: 3
-permalink: /docs/pico/swiinputtch.html
-sort: 9
+permalink: /docs/pico/input.html
+sort: 8
 ---
 
 
-## 3. GPIO Input
+## Datenannahme von GPIOs (Modus IN)
 {: .display-6 .fs-3 }
 
 Das Entgegennehmen von Eingabezuständen im Modus IN. 
@@ -17,6 +17,8 @@ Im Modus IN konfigurierte Pins können Werte von Sensoren und Tastern entgegenne
 * Luftfeuchte (humidity)
 
 ### Klickpfad und Datentypen:
+{: .display-6 .fs-4 }
+
 Klick auf SelectBox öffnet ein Pulldown-Menu.
 * Eingabetyp festlegen,  
   Datendefinition:

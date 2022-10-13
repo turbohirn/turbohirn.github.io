@@ -3,7 +3,7 @@ layout: page
 title: Technik und Umgebung 
 level: 3
 permalink: /docs/pico/techenv.html
-sort: 4
+sort: 3
 ---
 
 ## Hardware 
@@ -16,6 +16,7 @@ Mindestvoraussetzungen:
 * Raspberry Pi Zero mit 512MB RAM,
 * microSD mit 32 GB,
 
+***
 
 ## Software
 {: .display-6 .fs-3 }
@@ -37,6 +38,8 @@ Für das Backend und werden folgende Umgebungen und Bibliotheken benötigt:
         * aiohttp_compress,
     
     Das Bash-Script setup.sh installiert auf Wunsch alle Updates und Bibliotheken.
+
+***
 
 ## Entwicklungsumgebung
 {: .display-6 .fs-3 }
