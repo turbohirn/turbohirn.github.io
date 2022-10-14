@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
   <head>
     <meta charset="utf-8" />
-    <title>Turbohirn docs | Grundlegendes zum Programm</title>
+    <title>Turbohirn docs | 4. Sensor actor</title>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="apple-mobile-web-app-title" content="turbohirn on Github"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
@@ -327,6 +327,8 @@
                   
               
                   
+              
+                  
                       
                       <li class="nav-item"><a href="/"  class="nav-link text-white">Home</a></li>
                   
@@ -347,10 +349,10 @@
                   
               
                   
-              
-                  
                       
                       <li class="nav-item"><a href="/about/index.html"  class="nav-link text-white">About</a></li>
+                  
+              
                   
               
                   
@@ -382,7 +384,7 @@
                 
 
                 <div class="col-12">
-                  <h1 class="display-6">Grundlegendes zum Programm</h1><hr/>
+                  <h1 class="display-6">4. Sensor actor</h1><hr/>
                 </div>
                 <div class="col-md-4 col-lg-3">
                   <ul class="list-group mb-4 border">
@@ -398,14 +400,16 @@
                   
                   
                   
+                  
+                  
+                  
+                  
 
                   
 
-                  <li class="list-group-item list-group-item-action border-0 py-1 bg-info text-white fw-bold">
+                  <li class="list-group-item list-group-item-action border-0 py-1 ">
                     <a href="/docs/pico/basics.html" class="nav-link" title="basics.md"><small>Grundlegendes zum Programm</small></a>
                   </li>
-                  
-                  
                   
                   
                   
@@ -438,14 +442,14 @@
                   
                   
                   
+                  
+                  
 
                   
 
                   <li class="list-group-item list-group-item-action border-0 py-1 ">
                     <a href="/docs/pico/config.html" class="nav-link" title="config.md"><small>Programmkonfiguration</small></a>
                   </li>
-                  
-                  
                   
                   
                   
@@ -488,7 +492,7 @@
 
                   
 
-                  <li class="list-group-item list-group-item-action border-0 py-1 ">
+                  <li class="list-group-item list-group-item-action border-0 py-1 bg-info text-white fw-bold">
                     <a href="/docs/pico/sensoractors.html" class="nav-link" title="sensoractors.md"><small>4. Sensor actor</small></a>
                   </li>
                   
@@ -505,76 +509,7 @@
                   </ul>
                 </div>
                 <div class="col-md-8 col-lg-9">
-                <h2 class="display-6 fs-3" id="ziel">Ziel</h2>
-
-<p>Im Client soll es folgende Möglichkeiten geben:</p>
-<ol>
-  <li>GPIOs flexibel  in den Operations-Modus zu versetzen (Modus:  IN/OUT),</li>
-  <li>GPIOs externe Relais zu einfach ein- und auszuschalten (Modus: OUT),</li>
-  <li>GPIOs zeitgesteuert zu schalten (Modus: OUT),</li>
-  <li>GPIO-Eingangszustände auszuwerten und bei Ereignis GPIOs (wie in Punkt 2) zu schalten  (Modus: IN),</li>
-  <li>Schnittstellen für virtuelle GPIO-Extender und externe Mikrocontroller zur Verfügung zu stellen,</li>
-  <li>Steuerung weiterer Raspberry Pis via Remote-GPIO.</li>
-</ol>
-
-<p>Die Kernkonfiguration des GPIO-Headers befindet sich in einem Python-Dictionary. Die nutzerspezifischen GPIO-Einstellungen werden in einer separaten Stored-JSON-Datei abgelegt und zur Laufzeit mit dem Python-Dictonary angereichert. Diese JSON-Datei befindet sich nicht im GIT-Repository und wird nutzerabhängig erzeugt, wenn noch nicht vorhanden. Damit ist sichergestellt, dass Programmaktualisierungen diese Konfiguration nicht überschreiben oder beeinflussen. Ein Löschung von konfigurierten GPIOs ist nicht vorgesehen.
-Hinweis: Die gespeicherten GPIOs mit Status ‘Inactive’ werden in der Stored-JSON belassen, um zukünftige Konfigurationen der Nutzer-Metadaten nicht zu löschen und für eine spätere Verwendung vorzuhalten. Bei Änderungen des Datenmodells im Rahmen der Weiterentwicklung, sollte die Datei stored.json neu erzeugt werden.</p>
-
-<p>Die Steuerung von Pins (Modus OUT) wird von sogenannten Aktoren übernommen. Diese Aktoren steuern Pins entweder über Zeitsteuerungen oder über Eingabewerte. Bei Letzterem müssen Pins (Modus IN) mit einem entsprechenden Eingabe-Trigger konfiguriert sein. Diese Trigger sind aktuell:</p>
-<ol>
-  <li>An/Aus,</li>
-  <li>Temperatur,</li>
-  <li>Luftfeuchte.</li>
-</ol>
-
-<p>Die Verknüpfung der Aktoren mit den Pins (Modus OUT) erfolgt auf Basis einer 1:n-Verlinkung. Dabei können mehrere Pins von einem Aktor gesteuert werden. Ein einmal zugeordneter Pin (GPIO) kann nicht mit anderen Aktoren verwendet werden.</p>
-
-<hr />
-
-<h2 class="display-6 fs-3" id="einleitung">Einleitung</h2>
-
-<p>Die Daten werden im JSON-Format in der Datei /cfg/stored.json abgelegt. Diese Datei wird beim Start des Programms, mit folgender Datendefinition, angelegt.
-Datendefinitionen:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name/Key</th>
-      <th>Datentyp</th>
-      <th>Funktion/Kommentar</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>store</td>
-      <td>Dictionary</td>
-      <td>Wurzelelement</td>
-    </tr>
-    <tr>
-      <td>store/pins</td>
-      <td>Dictionary</td>
-      <td>Liste aller definierter Pins (ListItems)</td>
-    </tr>
-    <tr>
-      <td>store/actors</td>
-      <td>Dictionary</td>
-      <td>Ablage des initialen Frontend-Users und weiterer Nutzer.</td>
-    </tr>
-    <tr>
-      <td>store/user</td>
-      <td>Dictionary</td>
-      <td>Ablage des initialen Frontend-Users und weiterer Nutzer. Variablenliste mit den Feldern für Benutzer und Passwort, Datentyp String, Standardwert für ersten Listeneintrag: usr = ‘root’, pwd = ‘’</td>
-    </tr>
-  </tbody>
-</table>
-
-<p><br /></p>
-
-<h2 class="display-6 fs-3" id="programmstart">Programmstart</h2>
-
-<p>Wurde bereits eine Reihe von Pins (im Modus OUT) konfiguriert, werden diese beim Programmstart gesondert behandelt. Dies ist besonders bei Neustarts, Systemumzug, etc. notwendig. Bevor der Webserver gestartet wird, werden die gespeicherten Pins zyklisch gestartet. Das bedeutet im Detail: Jeder Pin im Modus OUT wird mit dem Status gestartet, in dem er zuletzt gespeichert wurde. Um Überlastungen des Stromnetzes bei gesteuerten Relais mit Stromschaltungen zu verhindern, werden diese mit einem Abstand von einer Sekunde separat gestartet. Dieser Zyklus kann in der Konfiguration angepasst werden. Sinnvoll ist dies, wenn Stromverbraucher beim Einschalten länger als eine Sekunde benötigen.
-Konfigurierte Zeitsteuerungen und Steuerungen über die definierten Eingangszustände  werden mit der python-internen HeartBeat-Methode automatisch gestartet.</p>
-
+                <h2 class="display-6 fs-3" id="konfiguration-der-sensoraktoren">Konfiguration der Sensoraktoren</h2>
 
                 </div>
 

@@ -3,7 +3,7 @@ layout: page
 title: 5. App settings
 level: 3
 permalink: /docs/pico/timers.html
-sort: 10
+sort: 100
 ---
 
 

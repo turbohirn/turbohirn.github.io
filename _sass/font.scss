@@ -21,10 +21,10 @@ $_baseFontExtender: Helvetica Neue,Helvetica,Arial,sans-serif;
     src: url($_font_path + 'route159-ultralight.otf') format("opentype");
 }
 
-/* BOLD */
+/* SEMIBOLD */
 @font-face {
-  font-family: 'r159_b';
-  src: url($_font_path + 'route159-bold.otf') format("opentype");
+  font-family: 'r159_sb';
+  src: url($_font_path + 'route159-semibold.otf') format("opentype");
 }
 
 /* ITALIC */
@@ -43,8 +43,8 @@ h1, h2, h3, h4, h5, h6 {
   font-family: r159_l, $_baseFontExtender;
 }
 
-strong {
-  font-family: r159_b, $_baseFontExtender;
+strong, .fw-bold {
+  font-family: r159_sb, $_baseFontExtender;
 }
 
 em {
@@ -52,7 +52,7 @@ em {
 }
 
 p, body {  
-  font-family: r159_r, $_baseFontExtender;
+  font-family: r159_l, $_baseFontExtender;
   line-height: 1.6em;
 }
 section p, section li {
