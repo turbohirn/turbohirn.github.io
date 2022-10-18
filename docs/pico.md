@@ -1,7 +1,7 @@
 ---
 layout: page
-title: PICO
-desc: Ein Raspberry Projekt zur Steuerung von stromabhängigen Verbrauchern anhand von Eingangs- und Zeitwerten.
+title: PiLC
+desc: Ein Raspberry Projekt zur direkten Steuerung der GPIOs über ein webbasiertes Frontend.
 permalink: /docs/pico/index.html
 level: 2
 sort: 1
