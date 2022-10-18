@@ -31,6 +31,7 @@ github_username:  turbohirn
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
     
 page_excerpts: true
 

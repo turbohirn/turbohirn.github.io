@@ -402,14 +402,28 @@
                   
 
                   <div class="col">
-                    <div class="card text-bg-light text-center" style="width: 18rem;">
-                      <div class="card-body">
-                        <h5 class="card-title">PICO</h5>
-                        <p class="card-text">
+                    <div class="card text-center shadow-sm" style="min-width:10rem;">
+
+                      <svg class="card-img position-absolute top-0 start-0 end-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" preserveAspectRatio="none" style="height:100%; z-index:2">
+
+                        <path d="M 0 150 V 200 H 200 V 150 C 120 200, 100 120, 0 150 Z" fill="#fa4" opacity="0.1"/>
+                        <path d="M 0 170 V 200 H 200 V 170 C 120 200, 100 120, 0 170 Z" fill="#fa4" opacity="0.3"/>
+                        <path d="M 0 190 V 200 H 200 V 190 C 120 200, 100 120, 0 190 Z" fill="#fa4"/>
+                        
+                      </svg>    
+                      
+                      <div class="card-body" style="z-index:3">
+                        <h5 class="card-title">Pico</h5>
+                        <p class="card-text mb-4">
                           <a href="/docs/pico/index.html" class="stretched-link"></a>
-                          <small>Ein Raspberry Projekt zur Steuerung von stromabhängigen Verbrauchern anhand von Eingangs- und Zeitwerten.</small>
+                          <small>Ein Raspberry Projekt zur direkten Steuerung der GPIOs über ein webbasiertes Frontend.</small>
                         </p>
+                  
+                        
                       </div>
+
+                  
+                  
                     </div>
                   </div>
                   
@@ -446,7 +460,7 @@
                 <div class="col-md-4 col-lg-3">
 
 
-                  <div class="card mt-4 mt-sm-0" style="width: 18rem;">
+                  <div class="card mt-4 mt-md-0" style="min-width: 10rem;">
                     <div class="card-header">
                       <h6 class="card-title">Important Releases</h6>
                       <p class="card-subtitle mb-2 text-muted">Neue Veröffentlichungen aus den Projekten</p>
